@@ -1,0 +1,66 @@
+package Mapdemo.demo2;
+
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.Set;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        Map<Student,Map<String,Set<String>>> students=new LinkedHashMap<>();
+        
+        Student s1=new Student(101,"Pratik","Pune",88.50);
+        
+        Map<String,Set<String>> details1=new LinkedHashMap<>();
+        
+        Set<String> skills1=new LinkedHashSet<>();
+        skills1.add("Java");
+        skills1.add("HTML");
+        skills1.add("CSS");
+        details1.put("Skills",skills1);
+        
+        Set<String> certificates1 = new LinkedHashSet<>();
+        certificates1.add("Java Certificate");
+        certificates1.add("SQL Certificate");
+        details1.put("Certificates", certificates1);
+
+        Set<String> hobbies1 = new LinkedHashSet<>();
+        hobbies1.add("Cricket");
+        hobbies1.add("Reading");
+        details1.put("Hobbies", hobbies1);
+
+        students.put(s1, details1);
+        
+        for(Student st:students.keySet())
+        {
+        	 System.out.println(st);
+
+             Map<String, Set<String>> info = students.get(st);
+
+             System.out.println("\nSkills");
+             for (String skill : info.get("Skills")) {
+                 System.out.println(skill);
+             }
+
+             System.out.println("\nCertificates");
+             for (String certificate : info.get("Certificates")) {
+                 System.out.println(certificate);
+             }
+
+             System.out.println("\nHobbies");
+             for (String hobby : info.get("Hobbies")) {
+                 System.out.println(hobby);
+             }
+
+             System.out.println("---------------------------------------");
+        }
+        
+        
+    }
+}

@@ -1,0 +1,38 @@
+package DSA.vectordemo;
+
+public class MyVector {
+
+	private int a[]=null;
+	private int index=-1;
+	MyVector()
+	{
+		this(10);
+    }
+
+	public MyVector(int size) {
+		// TODO Auto-generated constructor stub
+	 a = new int[size];	
+     }
+	public boolean isEmpty() {
+		return index==-1;
+	}
+	private boolean isfull()
+	{
+		return index==a.length-1;
+	}
+	
+	public String toString() {
+		StringBuilder sb=new StringBuilder("[");
+		if(!isEmpty()) {
+			for(int i=0;i<=index;i++) {
+				sb.append(a[i]);
+				sb.append(",");
+			}
+			sb.deleteCharAt(sb.length()-1);
+		}
+		sb.append("]");
+		return sb.toString();
+		
+	}
+	
+}

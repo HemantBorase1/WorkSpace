@@ -1,0 +1,14 @@
+package DSA.QueueDemo;
+
+
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+        
+    	MyDeque m=new MyDeque(4);
+    	
+    	System.out.println(m);
+    }
+}

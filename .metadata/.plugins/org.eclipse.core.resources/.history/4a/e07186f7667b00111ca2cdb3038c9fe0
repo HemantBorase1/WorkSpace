@@ -1,0 +1,49 @@
+package DSA.QueueDemo;
+
+public class MyCircularQueue {
+
+	private Object a[]=null;
+	private int front,rear,size;
+	
+	public MyCircularQueue(){
+		this(10);
+	}
+	public MyCircularQueue(int Capacity){
+		a=new Object[Capacity];
+		front=0;
+		rear=-1;
+		size=0;
+	}
+	public int size() {
+		return size;
+	}
+	public boolean isEmpty() {
+		return size==0;
+	}
+	public boolean isfull() {
+		return size()==a.length;
+	}
+	public String toString() {
+		StringBuilder sb=new StringBuilder("[");
+		if(!isEmpty()) {
+			for(int i=0;i<size();i++) {
+				int index=(front+i)%a.length;
+				sb.append(a[a.length]);
+				sb.append(",");
+			}
+			sb.deleteCharAt(sb.length()-1);
+		}
+		sb.append("]");
+		return sb.toString();
+	}
+	public boolean offer(Object o) {
+		if(!isfull()) {
+			rear=(rear+1)%a.length;
+			a[rear]=o;
+			size++;
+			return true;
+		}
+		throw new QueueFullException();
+	}
+	
+}

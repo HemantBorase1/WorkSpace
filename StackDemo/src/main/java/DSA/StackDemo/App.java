@@ -1,0 +1,24 @@
+package DSA.StackDemo;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        MyStack m=new MyStack();
+        m.push(10);
+        m.push(20);
+        m.push(30);
+        m.push(40);
+        m.push(50);
+        
+      
+        System.out.println(m.pop());
+        System.out.println(m);
+        System.out.println(m.search(20));
+        
+    }
+}

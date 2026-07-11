@@ -1,0 +1,59 @@
+package DSA.QueueDemo;
+
+public class MyQueue {
+
+	private Object a[]=null;
+	private int rear=-1;
+	
+	public MyQueue() {
+		this(10);
+	}
+	public MyQueue(int Size) {
+		a=new Object[Size];
+	}
+	
+	public int Size() {
+		return rear+1;
+	}
+	public boolean isEmpty() {
+		return rear==-1;
+	}
+	public boolean isfull() {
+		return rear==a.length-1;
+	}
+	public String toString() {
+		StringBuilder sb=new StringBuilder("[");
+		if(!isEmpty()) {
+			for(int i=0;i<=rear;i++) {
+				sb.append(a[i]);
+				sb.append(",");
+			}
+			sb.deleteCharAt(sb.length()-1);
+		}
+		sb.append("]");
+		return sb.toString();	
+		}
+	public boolean offer(Object obj) {
+		if(!isfull()) {
+			a[++rear]=obj;
+			return true;
+		}
+		throw new QueueFullException();
+	}
+	public Object Poll() {
+		if(!isEmpty()) {
+			Object o=a[0];
+			for(int i=1;i<=rear;i++) {
+				a[i-1]=a[i];
+			}
+			rear--;
+			return 0;
+		}
+		throw new QueueEmptyException();
+	}
+	public Object peek() {
+		if(!isEmpty())
+			return a[0];
+		throw new QueueEmptyException();
+	}
+}

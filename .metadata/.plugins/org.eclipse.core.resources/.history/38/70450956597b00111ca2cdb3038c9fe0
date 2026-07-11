@@ -1,0 +1,15 @@
+package DSA.QueueDemo;
+
+public class QueueEmptyException extends RuntimeException {
+
+	private String msg="queue is empty!!!";
+	
+	public QueueEmptyException(String msg) {
+		this.msg=msg;
+	}
+	public QueueEmptyException() {}
+	
+	public String toString() {
+		return getClass().getName()+":"+msg;
+		}
+}

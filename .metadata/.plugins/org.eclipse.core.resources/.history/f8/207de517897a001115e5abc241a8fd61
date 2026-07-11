@@ -1,0 +1,5 @@
+package DSA.StackDemo;
+
+public class StackEmptyException {
+
+}

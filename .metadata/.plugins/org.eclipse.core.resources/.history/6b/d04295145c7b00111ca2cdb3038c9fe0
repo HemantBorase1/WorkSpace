@@ -1,0 +1,18 @@
+package DSA.QueueDemo;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        
+    	MyQueue m=new MyQueue();
+    	m.offer(10);
+    	m.offer(20);
+    	m.poll();
+    	System.out.println(m);
+    }
+}

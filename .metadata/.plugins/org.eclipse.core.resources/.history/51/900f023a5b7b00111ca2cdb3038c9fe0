@@ -1,0 +1,25 @@
+package DSA.QueueDemo;
+
+public class MyQueue {
+
+	private Object a[]=null;
+	private int rear=-1;
+	
+	public MyQueue() {
+		this(10);
+	}
+	public MyQueue(int Size) {
+		a=new Object[Size];
+	}
+	
+	public int Size() {
+		return rear+1;
+	}
+	public boolean isEmpty() {
+		return rear==-1;
+	}
+	public boolean isfull() {
+		return rear==a.length-1;
+	}
+	
+}

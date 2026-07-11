@@ -1,0 +1,29 @@
+package DSA.QueueDemo;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        
+    	MyCircularQueue m=new MyCircularQueue(4);
+        m.offer(2);
+        m.offer(4);
+        m.offer(6);
+        m.offer(10);
+        m.poll();
+        m.offer(12);
+        m.poll();
+       
+        m.offer(14);
+        
+        while(!isEmpty()) {
+        	
+        }
+    	System.out.println(m.peek());
+    	System.out.println(m);
+    }
+}
