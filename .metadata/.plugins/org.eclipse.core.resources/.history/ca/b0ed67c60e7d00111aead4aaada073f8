@@ -1,0 +1,19 @@
+package DSA.LinkListDemo;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+       MyLinkedList m=new MyLinkedList();
+       m.addLast(10);
+       m.addLast(20);
+       m.addLast(30);
+       m.addLast(40);
+       m.addFirst(5);
+       System.out.println(m);
+    }
+}
