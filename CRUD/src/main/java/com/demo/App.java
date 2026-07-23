@@ -18,6 +18,9 @@ public class App
     */
      // System.out.println(sd.deleteStudentById(2));
       
-     System.out.println(sd.findStudentById(3));
+    s=sd.findStudentById(1);
+     s.setName("Hemant");
+     System.out.println(sd.updateStudent(s));
+     System.out.println(sd.findStudentById(1));
     }
 }
