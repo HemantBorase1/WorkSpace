@@ -2,28 +2,32 @@ package com.utils;
 
 import java.util.Properties;
 
-//import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
-import com.model.Gift;
-import com.model.Laptop;
-import com.model.Student;
-
+import model.Bed;
+import model.Bill;
+import model.Department;
+import model.Doctor;
+import model.Patient;
+import model.Receptionist;
+import model.Staff;
+import model.Ward;
 
 
 public class HBUtils {
 	
 	public static SessionFactory sf=new Configuration()
 			.setProperties(p1())
-			.addAnnotatedClass(Student.class).addAnnotatedClass(Laptop.class).addAnnotatedClass(Gift.class)
+			.addAnnotatedClass(Department.class).addAnnotatedClass(Doctor.class).addAnnotatedClass(Ward.class)
+			.addAnnotatedClass(Bed.class).addAnnotatedClass(Patient.class).addAnnotatedClass(Staff.class)
+			.addAnnotatedClass(Bill.class).addAnnotatedClass(Receptionist.class)
 			.buildSessionFactory();
 
 	private static Properties p1() {
 		
 		Properties p=new Properties();
 		p.setProperty("hibernate.connection.driver_class", "com.mysql.cj.jdbc.Driver");
-		p.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/jap88");
+		p.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/hospital");
 		p.setProperty("hibernate.connection.username", "root");
 		p.setProperty("hibernate.connection.password", "password");
 		p.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
