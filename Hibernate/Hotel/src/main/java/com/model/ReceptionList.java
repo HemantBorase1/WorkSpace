@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class ReceptionList {
@@ -13,6 +14,18 @@ public class ReceptionList {
 	private int id;
 	private String name;
 	private String phoneno;
+	
+	@ManyToOne
+	Staff staff=new Staff();
+	
+	
+	
+	public Staff getStaff() {
+		return staff;
+	}
+	public void setStaff(Staff staff) {
+		this.staff = staff;
+	}
 	@Override
 	public String toString() {
 		return "ReceptionList [id=" + id + ", name=" + name + ", phoneno=" + phoneno + "]";

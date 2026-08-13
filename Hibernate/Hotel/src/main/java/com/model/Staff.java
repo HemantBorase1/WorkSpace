@@ -1,9 +1,14 @@
 package com.model;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Staff {
@@ -14,6 +19,26 @@ public class Staff {
 	private String name;
 	private String type;
 	private String phone;
+	
+	@ManyToOne
+	Hotel hotel=new Hotel();
+	
+	@OneToMany(mappedBy = "staff")
+	List<ReceptionList> reception=new LinkedList();
+	
+	
+	public Hotel getHotel() {
+		return hotel;
+	}
+	public void setHotel(Hotel hotel) {
+		this.hotel = hotel;
+	}
+	public List<ReceptionList> getReception() {
+		return reception;
+	}
+	public void setReception(List<ReceptionList> reception) {
+		this.reception = reception;
+	}
 	@Override
 	public String toString() {
 		return "Staff [id=" + id + ", name=" + name + ", type=" + type + ", phone=" + phone + "]";

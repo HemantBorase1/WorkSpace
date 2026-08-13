@@ -1,9 +1,13 @@
 package com.model;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Guest {
@@ -15,6 +19,17 @@ public class Guest {
 	private String gender;
 	private String phone;
 	private String email;
+	
+	@ManyToMany
+	List<Booking> booking=new LinkedList();
+	
+	
+	public List<Booking> getBooking() {
+		return booking;
+	}
+	public void setBooking(List<Booking> booking) {
+		this.booking = booking;
+	}
 	@Override
 	public String toString() {
 		return "Guest [id=" + id + ", name=" + name + ", gender=" + gender + ", phone=" + phone + ", email=" + email
