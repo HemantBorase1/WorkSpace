@@ -27,15 +27,18 @@
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
 			<item value="com.demo"/>
+			<item value="Demo"/>
 			<item value="com.DSA"/>
 			<item value="DSA.StackLinkedlist"/>
 		</list>
 		<list key="groupId">
+			<item value="JDBC2"/>
 			<item value="Demo"/>
 			<item value="JDBC_API"/>
 			<item value="DSA"/>
 		</list>
 		<list key="artifactId">
+			<item value="Program2"/>
 			<item value="SortingAlgo"/>
 			<item value="JDB_Project"/>
 			<item value="StackUsingLinkedList"/>
